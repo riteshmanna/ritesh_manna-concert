@@ -76,15 +76,14 @@
         }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero */
+        /* Hero - SPACE FIXED HERE */
         .hero {
-            height: 80vh;
+            padding: 100px 5%; /* Flexible spacing instead of fixed 80vh */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 5%;
         }
 
         .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 1rem; }
@@ -116,26 +115,25 @@
             padding-left: 1rem;
         }
 
-        /* Using Columns instead of Grid to respect original aspect ratios */
         .masonry-wrapper {
             column-count: 3;
             column-gap: 20px;
         }
 
         .photo-item {
-            display: inline-block; /* Required for column-flow */
+            display: inline-block;
             width: 100%;
             margin-bottom: 20px;
             border-radius: 4px;
             overflow: hidden;
             background: var(--surface);
             cursor: pointer;
-            break-inside: avoid; /* Prevents image from splitting between columns */
+            break-inside: avoid;
         }
 
         .photo-item img {
             width: 100%;
-            height: auto; /* Uses actual ratio */
+            height: auto;
             display: block;
             filter: grayscale(10%);
             transition: 0.5s ease;
@@ -214,6 +212,7 @@
         }
 
         @media (max-width: 600px) {
+            .hero { padding: 60px 5% 20px; } /* Shrinks the top space on mobile */
             .masonry-wrapper { column-count: 1; }
             .nav-links { display: none; }
             .hero h1 { font-size: 3rem; }
@@ -292,7 +291,7 @@
                 <div class="photo-item" onclick="openLightbox('images/_DSC0462.webp')"><img src="images/_DSC0462.webp" alt="Live Gig"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0201.webp')"><img src="images/_DSC0201.webp" alt="Live Gig"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0197.webp')"><img src="images/_DSC0197.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0197.webp" alt="Live Gig"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0452.webp" alt="Live Gig"></div>
 
                 <div class="photo-item" onclick="openLightbox('images/FB_IMG_1744521753513.webp')"><img src="images/FB_IMG_1744521753513.webp" alt="Live Gig"></div>
             </div>
