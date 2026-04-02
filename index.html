@@ -106,7 +106,7 @@
             transition: 0.3s;
         }
 
-        /* --- UPDATED ALIGNED GRID --- */
+        /* --- PROFESSIONAL MASONRY GRID (ACTUAL RATIOS) --- */
         .gallery-container { padding: 4rem 8% 8rem 8%; }
         .gallery-container h2 {
             text-align: left;
@@ -116,25 +116,27 @@
             padding-left: 1rem;
         }
 
+        /* Using Columns instead of Grid to respect original aspect ratios */
         .masonry-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            column-count: 3;
+            column-gap: 20px;
         }
 
         .photo-item {
+            display: inline-block; /* Required for column-flow */
             width: 100%;
+            margin-bottom: 20px;
             border-radius: 4px;
             overflow: hidden;
             background: var(--surface);
             cursor: pointer;
+            break-inside: avoid; /* Prevents image from splitting between columns */
         }
 
         .photo-item img {
             width: 100%;
+            height: auto; /* Uses actual ratio */
             display: block;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
             filter: grayscale(10%);
             transition: 0.5s ease;
         }
@@ -144,7 +146,7 @@
             filter: grayscale(0%);
         }
 
-        /* --- LIGHTBOX STYLES --- */
+        /* --- POPUP / LIGHTBOX STYLES --- */
         #lightbox {
             display: none;
             position: fixed;
@@ -157,6 +159,17 @@
             justify-content: center;
             align-items: center;
             cursor: zoom-out;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
         }
 
         #lightbox img {
@@ -172,6 +185,7 @@
             to { transform: scale(1); opacity: 1; }
         }
 
+        /* Footer */
         footer {
             padding: 8rem 8% 4rem;
             background: var(--surface);
@@ -195,8 +209,12 @@
 
         .social-link:hover { background: var(--accent); color: white; }
 
+        @media (max-width: 1024px) {
+            .masonry-wrapper { column-count: 2; }
+        }
+
         @media (max-width: 600px) {
-            .masonry-wrapper { grid-template-columns: 1fr; }
+            .masonry-wrapper { column-count: 1; }
             .nav-links { display: none; }
             .hero h1 { font-size: 3rem; }
         }
@@ -205,6 +223,7 @@
 <body>
 
     <div id="lightbox" onclick="closeLightbox()">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-img" src="" alt="Popup View">
     </div>
 
@@ -226,21 +245,21 @@
         <section id="work" class="gallery-container">
             <h2>Live Gigs</h2>
             <div class="masonry-wrapper">
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi1.webp')"><img src="images/prithibi/prithibi1.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi2.webp')"><img src="images/prithibi/prithibi2.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi3.webp')"><img src="images/prithibi/prithibi3.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi4.webp')"><img src="images/prithibi/prithibi4.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi5.webp')"><img src="images/prithibi/prithibi5.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi6.webp')"><img src="images/prithibi/prithibi6.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi7.webp')"><img src="images/prithibi/prithibi7.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi8.webp')"><img src="images/prithibi/prithibi8.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi9.webp')"><img src="images/prithibi/prithibi9.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi10.webp')"><img src="images/prithibi/prithibi10.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi11.webp')"><img src="images/prithibi/prithibi11.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi12.webp')"><img src="images/prithibi/prithibi12.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi13.webp')"><img src="images/prithibi/prithibi13.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi14.webp')"><img src="images/prithibi/prithibi14.webp" alt="Concert photography"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi15.webp')"><img src="images/prithibi/prithibi15.webp" alt="Concert photography"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi1.webp')"><img src="images/prithibi/prithibi1.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi2.webp')"><img src="images/prithibi/prithibi2.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi3.webp')"><img src="images/prithibi/prithibi3.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi4.webp')"><img src="images/prithibi/prithibi4.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi5.webp')"><img src="images/prithibi/prithibi5.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi6.webp')"><img src="images/prithibi/prithibi6.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi7.webp')"><img src="images/prithibi/prithibi7.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi8.webp')"><img src="images/prithibi/prithibi8.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi9.webp')"><img src="images/prithibi/prithibi9.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi10.webp')"><img src="images/prithibi/prithibi10.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi11.webp')"><img src="images/prithibi/prithibi11.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi12.webp')"><img src="images/prithibi/prithibi12.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi13.webp')"><img src="images/prithibi/prithibi13.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi14.webp')"><img src="images/prithibi/prithibi14.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi15.webp')"><img src="images/prithibi/prithibi15.webp" alt="Prithibi Concert Photo"></div>
 
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (1).webp')"><img src="images/kabo/albert kabo (1).webp" alt="Albert Kabo"></div>
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (2).webp')"><img src="images/kabo/albert kabo (2).webp" alt="Albert Kabo"></div>
@@ -273,6 +292,8 @@
                 <div class="photo-item" onclick="openLightbox('images/_DSC0462.webp')"><img src="images/_DSC0462.webp" alt="Live Gig"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0201.webp')"><img src="images/_DSC0201.webp" alt="Live Gig"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0197.webp')"><img src="images/_DSC0197.webp" alt="Live Gig"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0197.webp" alt="Live Gig"></div>
+
                 <div class="photo-item" onclick="openLightbox('images/FB_IMG_1744521753513.webp')"><img src="images/FB_IMG_1744521753513.webp" alt="Live Gig"></div>
             </div>
         </section>
@@ -294,13 +315,29 @@
         function openLightbox(imgSrc) {
             document.getElementById('lightbox-img').src = imgSrc;
             document.getElementById('lightbox').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; 
+
+            if (window.history.pushState) {
+                window.history.pushState({ lightbox: 'open' }, null, "");
+            }
+        }
+
+        function hideLightboxUI() {
+            document.getElementById('lightbox').style.display = 'none';
+            document.body.style.overflow = 'auto'; 
         }
 
         function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            if (window.history.state && window.history.state.lightbox === 'open') {
+                window.history.back();
+            } else {
+                hideLightboxUI();
+            }
         }
+
+        window.onpopstate = function(event) {
+            hideLightboxUI();
+        };
     </script>
 </body>
 </html>
