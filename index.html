@@ -50,7 +50,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -76,9 +75,8 @@
         }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero - SPACE FIXED HERE */
         .hero {
-            padding: 100px 5%; /* Flexible spacing instead of fixed 80vh */
+            padding: 100px 5%; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -105,7 +103,6 @@
             transition: 0.3s;
         }
 
-        /* --- PROFESSIONAL MASONRY GRID (ACTUAL RATIOS) --- */
         .gallery-container { padding: 4rem 8% 8rem 8%; }
         .gallery-container h2 {
             text-align: left;
@@ -144,7 +141,6 @@
             filter: grayscale(0%);
         }
 
-        /* --- POPUP / LIGHTBOX STYLES --- */
         #lightbox {
             display: none;
             position: fixed;
@@ -183,7 +179,6 @@
             to { transform: scale(1); opacity: 1; }
         }
 
-        /* Footer */
         footer {
             padding: 8rem 8% 4rem;
             background: var(--surface);
@@ -196,7 +191,7 @@
         
         .social-link {
             display: inline-block;
-            margin-top: 1rem;
+            margin: 0.5rem;
             padding: 0.6rem 1.5rem;
             border: 1px solid var(--accent);
             color: var(--accent);
@@ -212,7 +207,7 @@
         }
 
         @media (max-width: 600px) {
-            .hero { padding: 60px 5% 20px; } /* Shrinks the top space on mobile */
+            .hero { padding: 60px 5% 20px; }
             .masonry-wrapper { column-count: 1; }
             .nav-links { display: none; }
             .hero h1 { font-size: 3rem; }
@@ -244,56 +239,55 @@
         <section id="work" class="gallery-container">
             <h2>Live Gigs</h2>
             <div class="masonry-wrapper">
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi1.webp')"><img src="images/prithibi/prithibi1.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi2.webp')"><img src="images/prithibi/prithibi2.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi3.webp')"><img src="images/prithibi/prithibi3.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi4.webp')"><img src="images/prithibi/prithibi4.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi5.webp')"><img src="images/prithibi/prithibi5.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi6.webp')"><img src="images/prithibi/prithibi6.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi7.webp')"><img src="images/prithibi/prithibi7.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi8.webp')"><img src="images/prithibi/prithibi8.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi9.webp')"><img src="images/prithibi/prithibi9.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi10.webp')"><img src="images/prithibi/prithibi10.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi11.webp')"><img src="images/prithibi/prithibi11.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi12.webp')"><img src="images/prithibi/prithibi12.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi13.webp')"><img src="images/prithibi/prithibi13.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi14.webp')"><img src="images/prithibi/prithibi14.webp" alt="Prithibi Concert Photo"></div>
-                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi15.webp')"><img src="images/prithibi/prithibi15.webp" alt="Prithibi Concert Photo"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi1.webp')"><img src="images/prithibi/prithibi1.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi2.webp')"><img src="images/prithibi/prithibi2.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi3.webp')"><img src="images/prithibi/prithibi3.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi4.webp')"><img src="images/prithibi/prithibi4.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi5.webp')"><img src="images/prithibi/prithibi5.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi6.webp')"><img src="images/prithibi/prithibi6.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi7.webp')"><img src="images/prithibi/prithibi7.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi8.webp')"><img src="images/prithibi/prithibi8.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi9.webp')"><img src="images/prithibi/prithibi9.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi10.webp')"><img src="images/prithibi/prithibi10.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi11.webp')"><img src="images/prithibi/prithibi11.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi12.webp')"><img src="images/prithibi/prithibi12.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi13.webp')"><img src="images/prithibi/prithibi13.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi14.webp')"><img src="images/prithibi/prithibi14.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi15.webp')"><img src="images/prithibi/prithibi15.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
 
-                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (1).webp')"><img src="images/kabo/albert kabo (1).webp" alt="Albert Kabo"></div>
-                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (2).webp')"><img src="images/kabo/albert kabo (2).webp" alt="Albert Kabo"></div>
-                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (3).webp')"><img src="images/kabo/albert kabo (3).webp" alt="Albert Kabo"></div>
-                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (4).webp')"><img src="images/kabo/albert kabo (4).webp" alt="Albert Kabo"></div>
-                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (5).webp')"><img src="images/kabo/albert kabo (5).webp" alt="Albert Kabo"></div>
+                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (1).webp')"><img src="images/kabo/albert kabo (1).webp" alt="Albert Kabo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (2).webp')"><img src="images/kabo/albert kabo (2).webp" alt="Albert Kabo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (3).webp')"><img src="images/kabo/albert kabo (3).webp" alt="Albert Kabo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (4).webp')"><img src="images/kabo/albert kabo (4).webp" alt="Albert Kabo" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (5).webp')"><img src="images/kabo/albert kabo (5).webp" alt="Albert Kabo" loading="lazy"></div>
 
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (1).webp')"><img src="images/folk diaryz/folk diaryz (1).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (2).webp')"><img src="images/folk diaryz/folk diaryz (2).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (3).webp')"><img src="images/folk diaryz/folk diaryz (3).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (4).webp')"><img src="images/folk diaryz/folk diaryz (4).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (5).webp')"><img src="images/folk diaryz/folk diaryz (5).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (6).webp')"><img src="images/folk diaryz/folk diaryz (6).webp" alt="Folk Diaryz"></div>
-                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (7).webp')"><img src="images/folk diaryz/folk diaryz (7).webp" alt="Folk Diaryz"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (1).webp')"><img src="images/folk diaryz/folk diaryz (1).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (2).webp')"><img src="images/folk diaryz/folk diaryz (2).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (3).webp')"><img src="images/folk diaryz/folk diaryz (3).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (4).webp')"><img src="images/folk diaryz/folk diaryz (4).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (5).webp')"><img src="images/folk diaryz/folk diaryz (5).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (6).webp')"><img src="images/folk diaryz/folk diaryz (6).webp" alt="Folk Diaryz" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (7).webp')"><img src="images/folk diaryz/folk diaryz (7).webp" alt="Folk Diaryz" loading="lazy"></div>
 
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils1.webp')"><img src="images/fossils/fossils1.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils2.webp')"><img src="images/fossils/fossils2.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils3.webp')"><img src="images/fossils/fossils3.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils4.webp')"><img src="images/fossils/fossils4.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils5.webp')"><img src="images/fossils/fossils5.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils6.webp')"><img src="images/fossils/fossils6.webp" alt="Fossils"></div>
-                <div class="photo-item" onclick="openLightbox('images/fossils/fossils7.webp')"><img src="images/fossils/fossils7.webp" alt="Fossils"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils1.webp')"><img src="images/fossils/fossils1.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils2.webp')"><img src="images/fossils/fossils2.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils3.webp')"><img src="images/fossils/fossils3.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils4.webp')"><img src="images/fossils/fossils4.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils5.webp')"><img src="images/fossils/fossils5.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils6.webp')"><img src="images/fossils/fossils6.webp" alt="Fossils" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/fossils/fossils7.webp')"><img src="images/fossils/fossils7.webp" alt="Fossils" loading="lazy"></div>
 
-                <div class="photo-item" onclick="openLightbox('images/_DSC0135.webp')"><img src="images/_DSC0135.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0478.webp')"><img src="images/_DSC0478.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0430.webp')"><img src="images/_DSC0430.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0138.webp')"><img src="images/_DSC0138.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0386.webp')"><img src="images/_DSC0386.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0460.webp')"><img src="images/_DSC0460.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0462.webp')"><img src="images/_DSC0462.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0201.webp')"><img src="images/_DSC0201.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0197.webp')"><img src="images/_DSC0197.webp" alt="Live Gig"></div>
-                <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0452.webp" alt="Live Gig"></div>
-
-                <div class="photo-item" onclick="openLightbox('images/FB_IMG_1744521753513.webp')"><img src="images/FB_IMG_1744521753513.webp" alt="Live Gig"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0135.webp')"><img src="images/_DSC0135.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0478.webp')"><img src="images/_DSC0478.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0430.webp')"><img src="images/_DSC0430.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0138.webp')"><img src="images/_DSC0138.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0386.webp')"><img src="images/_DSC0386.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0460.webp')"><img src="images/_DSC0460.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0462.webp')"><img src="images/_DSC0462.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0201.webp')"><img src="images/_DSC0201.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0197.webp')"><img src="images/_DSC0197.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0452.webp" alt="Live Gig" loading="lazy"></div>
+                <div class="photo-item" onclick="openLightbox('images/FB_IMG_1744521753513.webp')"><img src="images/FB_IMG_1744521753513.webp" alt="Live Gig" loading="lazy"></div>
             </div>
         </section>
     </main>
@@ -304,7 +298,9 @@
             <div class="contact-info">
                 <p>Call/WhatsApp: <a href="tel:+918944021957">+91 8944021957</a></p>
                 <p>Location: West Bengal, India</p>
-                <a href="https://www.instagram.com/_the.ritesh.manna_/" target="_blank" class="social-link">Instagram: @_the.ritesh.manna_</a>
+                <a href="https://www.instagram.com/_the.ritesh.manna_/" target="_blank" class="social-link">Instagram</a>
+                <br>
+                <a href="https://ritesh-manna-portfolio.vercel.app/" target="_blank" class="social-link">View Main Portfolio</a>
             </div>
             <p style="color: #444; font-size: 0.8rem; margin-top: 4rem;">&copy; 2026 RITESH MANNA PHOTOGRAPHY</p>
         </div>
