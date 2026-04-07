@@ -33,6 +33,16 @@
             --surface: #121212;
             --text: #ffffff;
             --text-dim: #a0a0a0;
+            --nav-bg: rgba(10, 10, 10, 0.9);
+        }
+
+        /* Light Mode Colors */
+        [data-theme="light"] {
+            --bg: #f5f5f5;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --text-dim: #666666;
+            --nav-bg: rgba(245, 245, 245, 0.9);
         }
 
         * {
@@ -48,6 +58,7 @@
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         nav {
@@ -57,9 +68,14 @@
             padding: 1.5rem 8%;
             position: sticky;
             top: 0;
-            background: rgba(10, 10, 10, 0.9);
+            background: var(--nav-bg);
             backdrop-filter: blur(10px);
             z-index: 1000;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
         }
 
         .logo { font-weight: 700; letter-spacing: 2px; font-size: 1.2rem; }
@@ -74,6 +90,28 @@
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--accent); }
+
+        /* Theme Toggle Button */
+        #theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 1.5rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        #theme-toggle:hover { transform: scale(1.1); }
+        
+        #theme-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+        
+        /* Show/Hide icons based on theme */
+        .sun-icon { display: none; }
+        [data-theme="light"] .moon-icon { display: none; }
+        [data-theme="light"] .sun-icon { display: block; }
 
         .hero {
             padding: 100px 5%; 
@@ -223,10 +261,28 @@
 
     <nav>
         <div class="logo">RITESH MANNA</div>
-        <ul class="nav-links">
-            <li><a href="#work">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#work">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="moon-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="sun-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
     </nav>
 
     <header class="hero">
@@ -240,54 +296,42 @@
             <h2>Live Gigs</h2>
             <div class="masonry-wrapper">
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (6).webp')"><img src="images/nakash aziz/nakash aziz (6).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi1.webp')"><img src="images/prithibi/prithibi1.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi2.webp')"><img src="images/prithibi/prithibi2.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi3.webp')"><img src="images/prithibi/prithibi3.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi4.webp')"><img src="images/prithibi/prithibi4.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi5.webp')"><img src="images/prithibi/prithibi5.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi6.webp')"><img src="images/prithibi/prithibi6.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (1).webp')"><img src="images/nakash aziz/nakash aziz (1).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (10).webp')"><img src="images/nakash aziz/nakash aziz (10).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (8).webp')"><img src="images/nakash aziz/nakash aziz (8).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi7.webp')"><img src="images/prithibi/prithibi7.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi8.webp')"><img src="images/prithibi/prithibi8.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi9.webp')"><img src="images/prithibi/prithibi9.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi10.webp')"><img src="images/prithibi/prithibi10.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (2).webp')"><img src="images/nakash aziz/nakash aziz (2).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (3).webp')"><img src="images/nakash aziz/nakash aziz (3).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi11.webp')"><img src="images/prithibi/prithibi11.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi12.webp')"><img src="images/prithibi/prithibi12.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi13.webp')"><img src="images/prithibi/prithibi13.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi14.webp')"><img src="images/prithibi/prithibi14.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/prithibi/prithibi15.webp')"><img src="images/prithibi/prithibi15.webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (1).webp')"><img src="images/kabo/albert kabo (1).webp" alt="Albert Kabo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (2).webp')"><img src="images/kabo/albert kabo (2).webp" alt="Albert Kabo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (12).webp')"><img src="images/nakash aziz/nakash aziz (12).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (13).webp')"><img src="images/nakash aziz/nakash aziz (13).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (3).webp')"><img src="images/kabo/albert kabo (3).webp" alt="Albert Kabo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (4).webp')"><img src="images/kabo/albert kabo (4).webp" alt="Albert Kabo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/kabo/albert kabo (5).webp')"><img src="images/kabo/albert kabo (5).webp" alt="Albert Kabo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (1).webp')"><img src="images/folk diaryz/folk diaryz (1).webp" alt="Folk Diaryz" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (2).webp')"><img src="images/folk diaryz/folk diaryz (2).webp" alt="Folk Diaryz" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (3).webp')"><img src="images/folk diaryz/folk diaryz (3).webp" alt="Folk Diaryz" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (5).webp')"><img src="images/nakash aziz/nakash aziz (5).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (11).webp')"><img src="images/nakash aziz/nakash aziz (11).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (4).webp')"><img src="images/folk diaryz/folk diaryz (4).webp" alt="Folk Diaryz" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (5).webp')"><img src="images/folk diaryz/folk diaryz (5).webp" alt="Folk Diaryz" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (6).webp')"><img src="images/folk diaryz/folk diaryz (6).webp" alt="Folk Diaryz" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/folk diaryz/folk diaryz (7).webp')"><img src="images/folk diaryz/folk diaryz (7).webp" alt="Folk Diaryz" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils1.webp')"><img src="images/fossils/fossils1.webp" alt="Fossils" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils2.webp')"><img src="images/fossils/fossils2.webp" alt="Fossils" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils3.webp')"><img src="images/fossils/fossils3.webp" alt="Fossils" loading="lazy"></div>
@@ -295,11 +339,9 @@
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils5.webp')"><img src="images/fossils/fossils5.webp" alt="Fossils" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils6.webp')"><img src="images/fossils/fossils6.webp" alt="Fossils" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/fossils/fossils7.webp')"><img src="images/fossils/fossils7.webp" alt="Fossils" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (15).webp')"><img src="images/nakash aziz/nakash aziz (15).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (14).webp')"><img src="images/nakash aziz/nakash aziz (14).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (9).webp')"><img src="images/nakash aziz/nakash aziz (9).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/_DSC0135.webp')"><img src="images/_DSC0135.webp" alt="Live Gig" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0478.webp')"><img src="images/_DSC0478.webp" alt="Live Gig" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0430.webp')"><img src="images/_DSC0430.webp" alt="Live Gig" loading="lazy"></div>
@@ -311,7 +353,6 @@
                 <div class="photo-item" onclick="openLightbox('images/_DSC0197.webp')"><img src="images/_DSC0197.webp" alt="Live Gig" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/_DSC0452.webp')"><img src="images/_DSC0452.webp" alt="Live Gig" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/FB_IMG_1744521753513.webp')"><img src="images/FB_IMG_1744521753513.webp" alt="Live Gig" loading="lazy"></div>
-
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (7).webp')"><img src="images/nakash aziz/nakash aziz (7).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
                 <div class="photo-item" onclick="openLightbox('images/nakash aziz/nakash aziz (16).webp')"><img src="images/nakash aziz/nakash aziz (16).webp" alt="Prithibi Concert Photo" loading="lazy"></div>
             </div>
@@ -333,6 +374,28 @@
     </footer>
 
     <script>
+        // Theme Toggle Logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check for saved user preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.setAttribute('data-theme', currentTheme);
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            let theme = body.getAttribute('data-theme');
+            if (theme === 'light') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Lightbox Logic
         function openLightbox(imgSrc) {
             document.getElementById('lightbox-img').src = imgSrc;
             document.getElementById('lightbox').style.display = 'flex';
